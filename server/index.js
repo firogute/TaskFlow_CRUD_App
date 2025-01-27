@@ -41,7 +41,6 @@ app.get("/todos", async (req, res) => {
   try {
     const allTodos = await db.query("select * from todo");
     res.json(allTodos.rows);
-    console.log(allTodos.rows);
   } catch (error) {
     console.error(error.message);
   }
@@ -92,3 +91,4 @@ app.delete("/todos/:id", async (req, res) => {
 app.listen(port, (req, res) => {
   console.log("The server is connected");
 });
+

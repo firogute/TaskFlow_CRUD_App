@@ -2,10 +2,16 @@ import React, { Fragment, useState } from "react";
 
 const InputTodo = () => {
   const today = new Date();
+  const timeString = today.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  }).split(" ")[0];
+
+  
   const formattedDate = today.toLocaleDateString("en-CA");
   const [description, setDescription] = useState("");
   const [startDate, setStartDate] = useState(formattedDate);
-  const [startTime, setStartTime] = useState("00:00");
+  const [startTime, setStartTime] = useState(`${timeString}`);
   const [endTime, setEndTime] = useState("00:00");
   const [endDate, setEndDate] = useState(formattedDate);
 
@@ -27,7 +33,9 @@ const InputTodo = () => {
   };
   return (
     <Fragment>
-      <h1 className="text-center mt-5">Classic Todo List</h1>
+      <h1 className="text-center mt-5">
+        Task<span style={{ color: "red" }}>Flow</span>
+      </h1>
       <form className="mt-5" onSubmit={onSubmitForm}>
         <table className="table">
           <tbody>

@@ -37,26 +37,40 @@ const ListTodos = () => {
         <thead>
           <tr>
             <th>Description</th>
-            <th>Start Date</th>
-            <th>Start Time</th>
-            <th>End Date</th>
-            <th>End Time</th>
+            <th>Start</th>
+            <th>End</th>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           {Todos.map((todo) => {
-            const startDate = (new Date(todo.startdate)).toISOString().split("T")[0];
-            const starttime = todo.starttime;
-            console.log(startDate,starttime);
+            console.log(todo);
+            const formatter = (date, time) => {
+              const startDate = new Date(date).toISOString().split("T")[0];
+              const starttime = time;
+              const formattedTime = new Date(
+                `${startDate}T${starttime}`
+              ).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+              return formattedTime;
+            };
             return (
               <tr key={todo.todo_id}>
                 <td>{todo.description}</td>
-                <td>{new Date(todo.startdate).toLocaleDateString()}</td>
-                <td>{todo.starttime}</td>
-                <td>{new Date(todo.enddate).toLocaleDateString()}</td>
-                <td>{new Date(todo.endtime).toLocaleTimeString()}</td>
+                <td>
+                  <div className="d-flex flex-column">
+                    <span>{new Date(todo.startdate).toLocaleDateString()}</span>
+                    <span>{formatter(todo.startdate, todo.starttime)}</span>
+                  </div>
+                </td>
+                <td>
+                  <div className="d-flex flex-column">
+                    <span>{new Date(todo.enddate).toLocaleDateString()}</span>
+                    <span>{formatter(todo.enddate, todo.endtime)}</span>
+                  </div>
+                </td>
+
                 <td>
                   <EditTodo todo={todo} />
                 </td>
@@ -68,6 +82,13 @@ const ListTodos = () => {
                     Delete
                   </button>
                 </td>
+                <td>
+                  {todo.iscompleted ? (
+                    <span className="badge bg-success">Completed</span>
+                  ) : (
+                    <span className="badge bg-warning">Pending</span>
+                  )}
+                </td>
               </tr>
             );
           })}
@@ -76,7 +97,6 @@ const ListTodos = () => {
             <td>Doe</td>
             <td>john@example.com</td>
           </tr>*/}
-          
         </tbody>
       </table>
     </Fragment>
