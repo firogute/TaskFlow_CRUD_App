@@ -19,14 +19,27 @@ A full-stack React-based todo list application with CRUD (Create, Read, Update, 
 - JavaScript (ES6+)
 - Bootstrap 5 (Styling)
 - REST API (Backend Communication)
+  -Node.js
+- Express.js
 - HTML5
 - CSS3
+
+<div class="" style="display:flex;">
+<img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/html.png">
+<img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/css.png"> 
+<img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/bootstrap.png">
+ <img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/javascript.png">
+ <img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/react.png">  
+<img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/express.png">
+<img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/node_js.png"> 
+<img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png"> 
+</div>
 
 ## Installation
 
 ### Prerequisites
 
-- Node.js and npm installed
+- Node.js and npm installed <img height="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/node_js.png">
 - PostgreSQL installed and running
 
 ### Setup Backend (Server)
